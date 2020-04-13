@@ -2,26 +2,7 @@ import gym
 
 #https://gym.openai.com/docs/
 
-'''
-	examples function:
-	Start a specific example with 
-	random simulations samples and seeds 
-'''
-def examples(desired_example):
-	env = gym.make(desired_example)
-	env.reset()
-	for i in range(10):
-		for _ in range(1000):
-			env.render()
-			env.step(env.action_space.sample())
-		env.reset()
-	env.close()
-
-'''
-	cart_pole: Runs a basic example from the OpenAI gym functions
-	that shows some of the properties that can be aquired during a simulation.
-'''
-def cart_pole_example():
+def cart_pole():
     #Start the environment
     env = gym.make("CartPole-v0")
     env.reset()
@@ -74,19 +55,7 @@ def spaces():
 
     print(env.observation_space)
 
-#Available Environments
-#https://gym.openai.com/envs/#classic_control
-
-def gym_registry():
-    print(gym.envs.registry.all())
-
 if __name__ == "__main__":
-	cart_pole = "CartPole-v0"
-	mountain_car = "MountainCar-v0"
-	MsPacman = "MsPacman-v0"
-	Hopper = "Hopper-v1" 
 
-	examples(cart_pole)
-	#cart_pole_example()
-	#spaces()
-	#gym_registry()
+    #spaces()
+    cart_pole()
